@@ -1,0 +1,97 @@
+Show: The Andy Griffith Show
+
+Genre(s): Comedy
+
+Rating: null
+
+Network: CBS
+
+Summary: <p>Down-home humor and an endearing cast of characters helped to make <b>The Andy Griffith Show</b> one of the most beloved comedies in the history of television. Introduced as a spinoff from The Danny Thomas Show in 1960, The Andy Griffith Show ran for eight seasons in prime time. Widower Andy Taylor divides his time between raising his young son, Opie, and his job as sheriff (and Justice of the Peace) of the sleepy North Carolina town, Mayberry. Andy and Opie live with Andy's Aunt Bee, who serves as a surrogate mother to both father and son. Andy's nervous cousin, Barney Fife, is his deputy sheriff whose utter incompetence is tolerated because Mayberry is virtually crime-free.</p>
+------------------------------------------------------------
+
+Show: Ozark
+
+Genre(s): Drama, Crime, Thriller
+
+Rating: 8.4
+
+Summary: <p>In this dark, dangerous series, a family struggles after moving to an Ozarks resort community when they're thrust into a world of dirty money.</p>
+------------------------------------------------------------
+
+Show: Ozark
+
+Genre(s): Drama, Crime, Thriller
+
+Rating: 8.4
+
+
+
+Summary: <p>In this dark, dangerous series, a family struggles after moving to an Ozarks resort community when they're thrust into a world of dirty money.</p>
+------------------------------------------------------------
+
+Show: Troy
+
+Genre(s): 
+
+Rating: null
+
+Network: E4
+
+Summary: <p>Magician, <b>Troy</b> heads to the streets around him to perform large-scale stunts, unexpected pranks and surprise demonstrations.</p>
+------------------------------------------------------------
+
+Show: Black Mirror
+
+Genre(s): Drama, Science-Fiction, Thriller
+
+Rating: 8.8
+
+
+
+Summary: <p>Over the last ten years, technology has transformed almost every aspect of our lives before we've had time to stop and question it. In every home; on every desk; in every palm - a plasma screen; a monitor; a smartphone--a black mirror of our 21st Century existence. <b>Black Mirror</b> is a contemporary British re-working of <i>The Twilight Zone</i> with stories that tap into the collective unease about our modern world.</p>
+------------------------------------------------------------
+
+Show: The Equalizer
+
+Genre(s): Drama, Crime
+
+Rating: null
+
+Network: CBS
+
+Summary: <p><b>The Equalizer</b> was an American crime drama television series, originally airing on CBS from 1985 until 1989. It starred the late Edward Woodward as a retired espionage/intelligence officer with a mysterious past, who uses the skills from his former career to exact vigilante justice on behalf of innocent people who are hopelessly trapped in dangerous circumstances.</p>
+------------------------------------------------------------
+
+Show: The Andy Griffith Show
+
+Genre(s): Comedy
+
+Rating: null
+
+Network: CBS
+
+Summary: <p>Down-home humor and an endearing cast of characters helped to make <b>The Andy Griffith Show</b> one of the most beloved comedies in the history of television. Introduced as a spinoff from The Danny Thomas Show in 1960, The Andy Griffith Show ran for eight seasons in prime time. Widower Andy Taylor divides his time between raising his young son, Opie, and his job as sheriff (and Justice of the Peace) of the sleepy North Carolina town, Mayberry. Andy and Opie live with Andy's Aunt Bee, who serves as a surrogate mother to both father and son. Andy's nervous cousin, Barney Fife, is his deputy sheriff whose utter incompetence is tolerated because Mayberry is virtually crime-free.</p>
+------------------------------------------------------------
+
+Show: Ozark
+
+Genre(s): Drama, Crime, Thriller
+
+Rating: 8.4
+
+
+
+Summary: <p>In this dark, dangerous series, a family struggles after moving to an Ozarks resort community when they're thrust into a world of dirty money.</p>
+------------------------------------------------------------
+
+Name: Denzel Washington
+
+Birthday: 1954-12-28
+
+Gender: Male
+
+Country: United States
+
+URL: http://www.tvmaze.com/people/66167/denzel-washington
+------------------------------------------------------------
+

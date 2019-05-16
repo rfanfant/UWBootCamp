@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Quoth the Giphy</title>
+</head>
+
+<body>
+  <div id="buttons">
+    <button data-person="arnold schwarzenegger">
+      I'll be back
+    </button>
+    <button data-person="michael j fox">
+      My happiness grows in direct proportion to my acceptance,
+      and in inverse proportion to my expectations.
+    </button>
+
+    <!-- STEP ONE: Open this file in the browser and click on the buttons. Watch what happens -->
+
+    <!-- STEP TWO: between the dashed lines below
+            * add three more buttons
+            * add a data-person attribute of famous people you know
+            * with a quote said by them -->
+
+    <!-- **************************************** -->
+
+    <!-- YOUR BUTTONS GO HERE!!!!!! Delete this comment and put your buttons here.  -->
+
+    <!-- **************************************** -->
+
+
+    <!-- STEP THREE: open this file in the browser and click on your buttons. If they don't work, then fix your buttons -->
+
+    <!-- STEP FOUR: go over the JavaScript with your partners, and explain the lines of code to each other. -->
+
+  </div>
+
+  <div id="gifs-appear-here">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  // use jquery to add an onclick event listener to our html button
+    $("button").on("click", function() {
+      // declare a variable to hold the value of the button clicked
+      // using $(this) we can then use jquery .attr() to grab the value of the data-person attribute once we pass it in as an argument to the .attr method
+      var person = $(this).attr("data-person");
+      
+      // api url 
+      // q param is set equal to our person variable we declared above
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        person + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+      // jquery ajax method
+      // pass in url and method(GET) as our arguments
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+      // once the api is hit, our .then Promise fires off and executes our callback
+      // pass in response to capture the object returned from our api
+        .then(function(response) {
+          // read the response object and identify what we need
+          console.log(response);
+          
+          // store the data object as a variable so that we can loop over it
+          var results = response.data;
+
+          // loop through the results array
+          for (var i = 0; i < results.length; i++) {
+            // create a new div using jquery
+            var gifDiv = $("<div class='card'>");
+            // store the rating from the results object 
+            var rating = results[i].rating;
+            // use jquery to create a new html p tag and the using jquery .text() method, add the rating as text
+            var p = $("<p>").text("Rating: " + rating);
+
+            // use jquery to create a new html img element
+            var personImage = $("<img>");
+
+            // reference personImage and using jquery .attr() method reference the url from the response object and feed it to the src attribute
+            personImage.attr("src", results[i].images.fixed_height.url);
+            
+            // use jquery .prepend method to render the p variable to our gifDiv
+            gifDiv.prepend(p);
+            // use jquery .prepend method to render the personImage variable to our gifDiv
+            gifDiv.prepend(personImage);
+            
+            // using jquery, select the div with id=gif-appear-here and use jquery prepend to render the gifDiv we just created
+            $("#gifs-appear-here").prepend(gifDiv);
+          }
+
+        });
+    });
+  </script>
+</body>
+
+</html>

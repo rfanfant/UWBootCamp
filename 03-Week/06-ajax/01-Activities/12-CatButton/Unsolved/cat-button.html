@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>The Magical Cat Button</title>
+</head>
+
+<body>
+  <button id="cat-button">magical cat button</button>
+  <div id="images">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // use jquery to add a click listener to our cat button
+    $("#cat-button").on("click", function() {
+
+      // api url
+      // api is suppose to return a random search using cat as our search term
+      var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats";
+
+      //  jquery ajax call
+      // url => url to hit
+      // method => get request according to documentation
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+
+      // .then is our Promise => it is triggered on any response
+      // pass in response as a parameter to capture the data obj returned
+        .then(function(response) {
+
+        // declare a variable and set it equal to the image uri using dot notation
+          var imageUrl = response.data.image_original_url;
+
+          // use jquery to dynamically create a html img element
+          var catImage = $("<img>");
+
+          // reference catImage and use jquery attr method to add a value to the src attribute
+          catImage.attr("src", imageUrl);
+          // reference catImage and use jquery attr method to add a value to the alt attribute
+          catImage.attr("alt", "cat image");
+
+          // use jquery to select the div with id=images and use jquery .prepend method to render the catImage div we just created
+          $("#images").prepend(catImage);
+        });
+    });
+  </script>
+</body>
+
+</html>

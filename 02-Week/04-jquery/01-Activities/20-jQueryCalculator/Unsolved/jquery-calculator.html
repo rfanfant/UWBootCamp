@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Calculator</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Added a link to our external stylesheet-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Jumbotron for Title -->
+<div class="jumbotron">
+    <h1 class="text-center">jQuery Calculator</h1>
+    <h3 class="text-center">Perform basic mathematic operations using the power of jQuery!</h3>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+      <!-- Calculator Card -->
+      <div class="col-lg-4">
+        <div class="card">
+          <h3 class="card-header">Calculator</h3>
+
+          <div class="card-body">
+            <button id="button-1" class="btn btn-primary number" value="1"><span>1</span></button>
+            <button id="button-2" class="btn btn-primary number" value="2"><span>2</span></button>
+            <button id="button-3" class="btn btn-primary number" value="3"><span>3</span></button>
+            <button id="button-plus" class="btn btn-danger operator" value="plus"><span>+</span></button>
+            <br><br>
+            <button id="button-4" class="btn btn-primary number" value="4"><span>4</span></button>
+            <button id="button-5" class="btn btn-primary number" value="5"><span>5</span></button>
+            <button id="button-6" class="btn btn-primary number" value="6"><span>6</span></button>
+            <button id="button-minus" class="btn btn-danger operator" value="minus"><span>&minus;</span></button>
+            <br><br>
+            <button id="button-7" class="btn btn-primary number" value="7"><span>7</span></button>
+            <button id="button-8" class="btn btn-primary number" value="8"><span>8</span></button>
+            <button id="button-9" class="btn btn-primary number" value="9"><span>9</span></button>
+            <button id="button-multiply" class="btn btn-danger operator" value="times"><span>&times;</span></button>
+            <br><br>
+            <button id="button-0" class="btn btn-primary number" value="0"><span>0</span></button>
+            <button id="button-divide" class="btn btn-danger operator" value="divide"><span>&divide;</span></button>
+            <button id="button-power" class="btn btn-danger operator" value="power"><span>^</span></button>
+            <button id="button-equal" class="btn btn-success equal" value="equals"><span>=</span></button>
+            <br><br>
+            <button id="button-clear" class="btn btn-dark clear" value="clear"><span>clear</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Card -->
+      <div class="col-lg-6">
+        <div class="card">
+          <h3 class="card-header">Result</h3>
+          <div class="card-body">
+            <h1 id="first-number"></h1>
+            <h1 id="operator"></h1>
+            <h1 id="second-number"></h1>
+            <hr>
+            <h1 id="result"></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// USE CASES
+// 1. User clicks a series of numbers to create the first number and the number is displayed on the screen
+// 2. User clicks an operator and the respective sign is displayed on the screen
+// 3. User clicks a series of numbers to create the second number and the number is displayed on the screen
+// 4. User clicks equals sign and the result is displayed on the screen
+// 5. User clicks the clear button and the values on the screen are removed
+
+// ============= VARIABLES =============== //
+// variable to hold first number
+var firstNum = "";
+
+// variable to hold second number
+var secondNum = "";
+
+// variable to store the operator
+var operator = null;
+
+// variable to hold the result
+var result = 0;
+
+
+// ============= FUNCTIONS ================ //
+
+// this function will be responsible for resetting the calculator when the reset button is click
+function reset(){
+  // clear data on the screen
+  // select the DOM elements and clear them using javascript
+  $("#first-number").empty();
+  $("#second-number").empty();
+  $("#result").empty();
+  $("#operator").empty();
+
+  // set our variables back to their default value
+  operator = null;
+  firstNum = "";
+  secondNum = "";
+  result = 0;
+
+}
+
+
+
+// ============== EVENT LISTENERS =========== //
+
+// use jquery to select the buttons with class name number and then add button value to the firstNum or secondNum variable
+$(".number").click(function(){
+  // grab the value of the number clicked
+  // How do I grab the value attribute of an element using jquery?
+  // if the operator is null, then add to the firstNum
+  if(!operator){
+    firstNum += $(this).val();
+    console.log("FIRST NUM: ", firstNum)
+    // using jquery, select the div with id first-number and append the value of firstNum to div
+    $("#first-number").text(firstNum);
+  }
+  // else, add to the secondNum
+  else{
+    secondNum += $(this).val();
+    console.log("SECOND NUM: ", secondNum)
+    $("#second-number").text(firstNum);
+  }
+})
+
+// event listener for each operator clicked
+$(".operator").click(function(){
+  //  console.log("OPERATOR: ", $(this).val())
+  operator = $(this).val();
+  if(operator === "plus"){
+    $("#operator").text('+');
+  }else if(operator === "minus"){
+    $("#operator").text('-');
+  }
+})
+
+// event listener for our equals sign
+$(".equal").click(function(){
+  console.log("working")
+  // if operator is plus, add firstNum and secondNum
+  if(operator === "plus"){
+    result = parseInt(firstNum) + parseInt(secondNum);
+    console.log(result);
+    // append the result to the screen
+    $("#result").text(result);
+  }
+  // else if, if operator is minus, subtract firstNum - secondNum
+
+})
+
+// event listener for our clear button
+$(".clear").click(function(){
+  reset();
+})
+
+
+});
+
+</script>
+
+</body>
+</html>
